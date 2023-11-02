@@ -69,14 +69,14 @@ export default function Cart() {
         {isLoadingCart && <LoadingScreen />}
         <div className="bg-main-light p-5">
           <h1 className="mb-5 text-center h2 ">Cart shope</h1>
-          <div className="d-flex justify-content-between align-items-center">
-            <h3 className="h6">
+          <div className="d-flex justify-content-sm-between align-items-sm-center  flex-sm-row flex-column">
+            <h3 className="h6 py-1">
               Total Price :{" "}
               <span className="text-main">
                 {cartDetails?.data?.totalCartPrice} EGP
               </span>
             </h3>
-            <h3 className="h6">
+            <h3 className="h6 py-1 ">
               Total Cart Items :{" "}
               <span className="text-main">{cartDetails?.numOfCartItems}</span>
             </h3>
@@ -98,7 +98,7 @@ export default function Cart() {
                       <i className="me-1 fa fa-trash-can"></i>Remove
                     </button>
                   </div>
-                  <div className="right-side ">
+                  <div className="right-side d-flex flex-column flex-sm-row ">
                     <button
                       onClick={() =>
                         updateProdutCart(ele.product._id, ele.count + 1)
@@ -107,7 +107,7 @@ export default function Cart() {
                     >
                       +
                     </button>
-                    <span className="m-3">{ele.count}</span>
+                    <span className="m-sm-3 m-1 text-center">{ele.count}</span>
                     <button
                       onClick={() =>
                         updateProdutCart(ele.product._id, ele.count - 1)
