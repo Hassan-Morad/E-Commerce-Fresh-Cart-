@@ -1,5 +1,6 @@
 import './App.css';
 import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';  // Updated import
+import { createHashHistory } from 'history';
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
@@ -51,6 +52,13 @@ function App() {
   useEffect(() => {
     if (localStorage.getItem('userToken')) {
       setToken(localStorage.getItem('userToken'));
+    }
+  }, []);
+  useEffect(() => {
+    // Check if the URL doesn't contain a hash
+    if (!window.location.hash) {
+      // Append '#/' to the URL and reload the page
+      window.location.href = '/#' + window.location.pathname;
     }
   }, []);
   return <>
