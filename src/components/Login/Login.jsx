@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useRef } from "react";
-import Style from "./Login.module.css";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
@@ -8,12 +7,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { Circles } from "react-loader-spinner";
 import { tokenContext } from "../../Context/TokenContext";
 import { Helmet } from "react-helmet";
+import { CartContext } from "../../Context/CartContext";
 export default function Login() {
   let navigate = useNavigate();
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(null);
   const [isLoading, setisLoading] = useState(false);
   let { setToken } = useContext(tokenContext);
+  let { getIntialCart } = useContext(CartContext);
   const timeoutRef = useRef(null); 
   async function loginSubmet(values) {
     setError(null);
@@ -25,8 +26,9 @@ export default function Login() {
         setError(err.response.data.message);
       });
     if (data.message === "success") {
-      setToken(data.token);
+      await setToken(data.token);
       localStorage.setItem("userToken", data.token);
+      await getIntialCart();
       setisLoading(false);
       setError(null);
       setSuccess("Welcome back");

@@ -77,9 +77,11 @@ export default function CartContextProvider(props) {
       .catch((err) => err);
   }
   function onlinePayment(shippingAddress) {
+    const redirectURL = 'https://hassan-morad.github.io/E-Commerce-Fresh-Cart-/#/allorder';
+
     return axios
       .post(
-        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartID}?url=http://localhost:3000`,
+        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartID}?url=${redirectURL}`,
         {
           shippingAddress,
         },
@@ -104,6 +106,7 @@ export default function CartContextProvider(props) {
       value={{
         addToCart,
         getCart,
+        getIntialCart,
         deleteProductFromCart,
         updateProduct,
         onlinePayment,

@@ -27,7 +27,7 @@ export default function Brands() {
               className=" col-lg-3 col-md-4 col-sm-6 product-cursor"
             >
               <div className="product rounded-3  d-flex flex-column align-items-center  position-relative ">
-                <Link to={"/spacificbrand/" + ele._id}>
+                <Link to={"/specificbrand/" + ele._id}>
                   <div className="photo">
                     <img
                       src={ele.image}

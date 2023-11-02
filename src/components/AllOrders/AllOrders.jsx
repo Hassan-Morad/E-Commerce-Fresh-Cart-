@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Style from "./AllOrders.module.css";
 import { UserContext } from "../../Context/UserOrderContext";
 import LoadingScreen from './../loadingScreen/loadingScreen';
 import jwtDecode from "jwt-decode";
@@ -37,9 +36,9 @@ export default function AllOrders() {
         <h2 className="text-center mb-4">All Orders</h2>
         {AllOrders?.data?.map((ele, idx) => (
           <div key={idx} className="order shadow border p-3 rounded-2 mb-5">
-            <div className="d-flex mb-3 justify-content-between">
+            <div className="d-flex justify-content-sm-between align-items-sm-center  flex-sm-row flex-column">
               <h3 className="mb-3 h4">Order : {idx + 1}</h3>
-              <h3 className="btn p-1 w-50 h6 btn-success">
+              <h3 className="mb-2 h4 text-success">
                 {" "}
                 Total price : {ele.totalOrderPrice}
               </h3>
@@ -55,7 +54,7 @@ export default function AllOrders() {
                       />
                     </div>
                     <div className=" col-md-9 col-sm-8 ">
-                      <h3 className="h5 mt-2 text-main">{item.product.title}</h3>
+                      <h3 className="h5 mt-2 text-main">{item.product.title.split(" ").slice(0, 3).join(" ")}</h3>
                       <p>Count: {item.count}</p>
                       <p>{item.price} EGP</p>
                     </div>

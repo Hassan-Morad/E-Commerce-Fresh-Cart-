@@ -3,13 +3,11 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import Slider from "react-slick";
 import { useParams } from "react-router-dom";
-import { Circles } from "react-loader-spinner";
 import { CartContext } from "../../Context/CartContext";
 import toast from "react-hot-toast";
 import LoadingScreen from "../loadingScreen/loadingScreen";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
-import Products from './../Products/Products';
 export default function Details() {
   const settings = {
     dots: true,
