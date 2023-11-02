@@ -104,6 +104,7 @@ export default function CartContextProvider(props) {
       value={{
         addToCart,
         getCart,
+        getIntialCart,
         deleteProductFromCart,
         updateProduct,
         onlinePayment,
