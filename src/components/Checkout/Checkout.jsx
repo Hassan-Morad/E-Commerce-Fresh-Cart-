@@ -10,10 +10,8 @@ export default function Checkout() {
   async function payment(values) {
     setIsLoading(true);
     try {
-      const response = await onlinePayment(values);
-      if (response && response.data) {
-        const data = response.data;
-        console.log(data);
+      const { data } = await onlinePayment(values);
+      if (data?.status === "success") {
         window.location.href = data.session.url;
       } else {
         console.error("No data received from onlinePayment function.");
