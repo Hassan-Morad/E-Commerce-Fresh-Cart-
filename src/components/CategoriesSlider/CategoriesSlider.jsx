@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import Style from './CategoriesSlider.module.css';
 import Slider from "react-slick";
 import axios from 'axios';
 import { useQuery } from 'react-query';

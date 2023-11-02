@@ -9,11 +9,21 @@ export default function Checkout() {
 
   async function payment(values) {
     setIsLoading(true);
-    let { data } = await onlinePayment(values);
-    console.log(data);
-    window.location.href = data.session.url;
+    try {
+      const response = await onlinePayment(values);
+      if (response && response.data) {
+        const data = response.data;
+        console.log(data);
+        window.location.href = data.session.url;
+      } else {
+        console.error("No data received from onlinePayment function.");
+      }
+    } catch (error) {
+      console.error("An error occurred while making the payment:", error);
+    }
     setIsLoading(false);
   }
+  
   let formik = useFormik({
     initialValues: {
       details: "",

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Logo from "../../Assets/images/freshcart-logo.svg";
 import { tokenContext } from "../../Context/TokenContext";
 import { CartContext } from "../../Context/CartContext";
@@ -10,11 +10,9 @@ export default function Navbar() {
   let { token, setToken } = useContext(tokenContext);
   let { numOfCartItems } = useContext(CartContext);
   const { wishlistCount } = useContext(wishlistContext);
-  let navigate = useNavigate();
   function logOut() {
     localStorage.removeItem("userToken");
     setToken(null);
-    navigate("./login");
   }
 
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +25,7 @@ export default function Navbar() {
     <>
       <nav className="px-3 navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <Link className="navbar-brand" to="/">
+          <Link className="navbar-brand" to="">
             <img src={Logo} alt="Fresh Logo" />
           </Link>
           <button
@@ -157,13 +155,14 @@ export default function Navbar() {
                       </ul>
                     )}
                   </div>
-                  <button
+                  <Link
                     className="nav-link active"
                     aria-current="page"
                     onClick={logOut}
+                    to="/login"
                   >
                     Logout
-                  </button>
+                  </Link>
                 </li>
               </>
                 

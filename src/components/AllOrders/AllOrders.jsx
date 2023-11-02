@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Style from "./AllOrders.module.css";
 import { UserContext } from "../../Context/UserOrderContext";
 import LoadingScreen from './../loadingScreen/loadingScreen';
 import jwtDecode from "jwt-decode";

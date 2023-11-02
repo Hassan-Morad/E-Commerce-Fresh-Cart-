@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from "react";
-import Style from "./Cart.module.css";
 import { CartContext } from "../../Context/CartContext";
 import { Link } from "react-router-dom";
 import LoadingScreen from "../loadingScreen/loadingScreen";
@@ -12,7 +11,6 @@ export default function Cart() {
     getCart,
     deleteProductFromCart,
     updateProduct,
-    numOfCartItems,
     setNumOfCartItems,
     clearCart,
   } = useContext(CartContext);
