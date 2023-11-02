@@ -1,5 +1,5 @@
 import './App.css';
-import { RouterProvider, createBrowserRouter } from 'react-router-dom';  // Updated import
+import { RouterProvider, createBrowserRouter, createHashRouter } from 'react-router-dom';  // Updated import
 import Layout from './components/Layout/Layout';
 import Home from './components/Home/Home';
 import Login from './components/Login/Login';
@@ -23,7 +23,7 @@ import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ResetCode from './components/ResetCode/ResetCode';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 
-let routers = createBrowserRouter([
+let routers = createHashRouter([
   { path: '/', element: <Layout />, children: [
     { index: true, element: <ProtectedRoutes><Home/></ProtectedRoutes> },
     { path: 'login', element: <Login /> },
