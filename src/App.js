@@ -55,9 +55,10 @@ function App() {
   }, []);
   useEffect(() => {
     // Check if the URL doesn't contain a hash
-    if (!window.location.hash) {
+    console.log(fine);
+    if (window.location.href == "https://hassan-morad.github.io/E-Commerce-Fresh-Cart-/allorders") {
       // Append '#/' to the URL and reload the page
-      window.location.href = '/#' + window.location.pathname;
+      window.location.href = "https://hassan-morad.github.io/E-Commerce-Fresh-Cart-/#/allorders";
     }
   }, []);
   return <>
