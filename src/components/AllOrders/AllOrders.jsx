@@ -38,7 +38,7 @@ export default function AllOrders() {
           <div key={idx} className="order shadow border p-3 rounded-2 mb-5">
             <div className="d-flex justify-content-sm-between align-items-sm-center  flex-sm-row flex-column">
               <h3 className="mb-3 h4">Order : {idx + 1}</h3>
-              <h3 className="mb-2 h4 ">
+              <h3 className="mb-2 h4 text-success">
                 {" "}
                 Total price : {ele.totalOrderPrice}
               </h3>
