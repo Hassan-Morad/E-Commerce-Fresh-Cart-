@@ -14,6 +14,7 @@ export default function Checkout() {
       if (response && response.data) {
         const data = response.data;
         console.log(data);
+        console.log(window.location.href);
         window.location.href = data.session.url;
       } else {
         console.error("No data received from onlinePayment function.");
