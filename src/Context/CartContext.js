@@ -79,7 +79,7 @@ export default function CartContextProvider(props) {
   function onlinePayment(shippingAddress) {
     return axios
       .post(
-        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartID}?url=https://hassan-morad.github.io/E-Commerce-Fresh-Cart-`,
+        `https://ecommerce.routemisr.com/api/v1/orders/checkout-session/${cartID}?url=https://hassan-morad.github.io/E-Commerce-Fresh-Cart-/#/#`,
         {
           shippingAddress,
         },
