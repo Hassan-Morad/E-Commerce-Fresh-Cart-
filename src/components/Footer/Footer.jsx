@@ -1,11 +1,5 @@
 import React from "react";
-import amazon from "../../Assets/images/amazon-logo.png";
-import express from "../../Assets/images/american-express-logo.png";
-import mastercard from "../../Assets/images/mastercard-logo.png";
-import paypal from "../../Assets/images/paypal logo.png";
-import appStore from "../../Assets/images/app-store.png";
-import googlePlay from "../../Assets/images/google-play.png";
-import { Link } from "react-router-dom";
+
 
 export default function Footer() {
   return (

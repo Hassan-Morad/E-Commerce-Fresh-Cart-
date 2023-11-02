@@ -1,5 +1,4 @@
 import React from "react";
-import Style from "./MainSlider.module.css";
 import Slider from "react-slick";
 
 export default function MainSlider() {
