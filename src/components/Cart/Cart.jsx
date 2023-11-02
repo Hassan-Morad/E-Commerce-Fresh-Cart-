@@ -98,7 +98,7 @@ export default function Cart() {
                       <i className="me-1 fa fa-trash-can"></i>Remove
                     </button>
                   </div>
-                  <div className="right-side d-flex flex-column flex-sm-row ">
+                  <div className="right-side px-2 d-flex flex-column flex-sm-row ">
                     <button
                       onClick={() =>
                         updateProdutCart(ele.product._id, ele.count + 1)
